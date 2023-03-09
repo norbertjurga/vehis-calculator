@@ -1,6 +1,6 @@
 ## Vehis - Recruitment Task
 
-Installation
+Local enviroment installation
 ```
 cp .env.example .env #replace with your enviroment variables
 
@@ -13,7 +13,17 @@ docker run --rm \
 
 ./vendor/bin/sail up 
 ./vendor/bin/sail artisan migrate
+
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev
 ```
+
+Build for production
+```
+./vendor/bin/sail npm run build
+```
+
+
 
 Run tests
 ```

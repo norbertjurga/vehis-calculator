@@ -1,6 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://gamerhash.com/images/gamerhash-logo.svg" width="400"></a></p>
-
-
 ## Vehis - Recruitment Task
 
 Installation

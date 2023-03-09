@@ -18,7 +18,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 170000,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $response->assertSuccessful();
@@ -33,7 +33,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 12400,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $response->assertSuccessful();
@@ -49,7 +49,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 400500,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $this->assertEquals(0, Calculation::count());
@@ -64,7 +64,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => -10,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $this->assertEquals(0, Calculation::count());
@@ -78,7 +78,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 2,
+            'number_of_payments' => 2,
         ]);
 
         $this->assertEquals(5300, Calculation::first()->insurance_cost);
@@ -92,7 +92,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000,
             'is_price_net' => true,
             'with_gps' => false,
-            'payments_no' => 2,
+            'number_of_payments' => 2,
         ]);
 
         $this->assertEquals(5861, Calculation::first()->insurance_cost);
@@ -105,7 +105,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000,
             'is_price_net' => true,
             'with_gps' => false,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $this->assertEquals(5550, Calculation::first()->insurance_cost);
@@ -118,7 +118,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 10,
+            'number_of_payments' => 10,
         ]);
 
         $this->assertEquals(0, Calculation::count());
@@ -131,7 +131,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000,
             'is_price_net' => true,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $this->assertEquals(100000, Calculation::first()->net_car_value);
@@ -145,7 +145,7 @@ class CalculatesInsuranceCostTest extends TestCase
             'car_value' => 100000 * config('calculations.gross_to_net_multiplier'),
             'is_price_net' => false,
             'with_gps' => true,
-            'payments_no' => 1,
+            'number_of_payments' => 1,
         ]);
 
         $this->assertEquals(100000, Calculation::first()->net_car_value);

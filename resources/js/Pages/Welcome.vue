@@ -25,7 +25,7 @@ const setBaseValues = () => {
         car_value: 0,
         is_price_net: true,
         with_gps: true,
-        payments_no: 1,
+        number_of_payments: 1,
     };
 }
 
@@ -33,13 +33,12 @@ onBeforeMount(() => {
     setBaseValues();
 });
 
-// watch showInstalmentOptions
 watch(showInstalmentOptions, (value) => {
     if (!value) {
-        form.value.payments_no = 1;
+        form.value.number_of_payments = 1;
     }
 
-    form.value.payments_no = 2;
+    form.value.number_of_payments = 2;
 
 });
 
@@ -122,13 +121,13 @@ const submitCalculation = () => {
                         <div class="p-8 bg-base-100 rounded-lg transition" v-show="showInstalmentOptions">
                             <div class="form-control">
                                 <label class="label cursor-pointer">
-                                    <Radio :value="2" v-model:checked="form.payments_no" class="checked:bg-red-500" />
+                                    <Radio :value="2" v-model:checked="form.number_of_payments" class="checked:bg-red-500" />
                                     <span class="label-text text-right">2 raty</span>
                                 </label>
                             </div>
                             <div class="form-control">
                                 <label class="label cursor-pointer">
-                                    <Radio :value="4" v-model:checked="form.payments_no" class="checked:bg-red-500" />
+                                    <Radio :value="4" v-model:checked="form.number_of_payments" class="checked:bg-red-500" />
                                     <span class="label-text text-right">4 raty</span>
                                 </label>
                             </div>
@@ -175,17 +174,17 @@ const submitCalculation = () => {
                     <div class="mt-4">
                         <div class="flex">
                             <input type="checkbox" class="checkbox cursor-default checkbox-success"
-                                @click.prevent="() => { }" :checked="calculation.payments_no > 1" />
+                                @click.prevent="() => { }" :checked="calculation.number_of_payments > 1" />
                             <div class="ml-4 font-bold text-xl font-mono">RATY</div>
                         </div>
                     </div>
                     <div class="p-8 mt-4 bg-base-100 rounded-lg transition"
-                        v-show="calculation.payments_no > 1">
+                        v-show="calculation.number_of_payments > 1">
                         <div class="flex justify-between items-center">
                             <p>
                                 Ilość rat:
                             </p>
-                            <p class="font-mono text-xl">{{ calculation.payments_no }}</p>
+                            <p class="font-mono text-xl">{{ calculation.number_of_payments }}</p>
                         </div>
                         <div class="flex justify-between items-center">
                             <p>

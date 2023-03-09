@@ -15,12 +15,12 @@ class CalculationResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'id' => $this->id,
             'year_of_production' => $this->year_of_production,
-            'is_price_net' => $this->is_price_net,
             'price_net' => $this->net_car_value,
-            'with_gps' => $this->with_gps,
             'price_gross' => $this->gross_car_value,
-            'payments_no' => $this->payments_no,
+            'with_gps' => $this->with_gps,
+            'number_of_payments' => $this->number_of_payments,
             'insurance_cost' => $this->insurance_cost,
             'installment_cost' => $this->installment_cost,
         ];

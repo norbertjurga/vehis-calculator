@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('calculations', function (Blueprint $table) {
             $table->id();
 
-            $table->boolean('is_price_net')->default(0);
             $table->boolean('with_gps')->default(1);
 
             $table->integer('year_of_production');
-            $table->integer('car_value');
+            $table->integer('net_car_value');
 
-            $table->tinyInteger('payments_no');
+            $table->tinyInteger('number_of_payments');
 
             $table->timestamps();
         });

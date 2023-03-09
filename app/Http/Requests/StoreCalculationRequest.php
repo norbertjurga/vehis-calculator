@@ -27,9 +27,9 @@ class StoreCalculationRequest extends FormRequest
                 'min:' . 1,
                 new UnderMaxNetValueRule()
             ],
-            'is_price_net'   => 'boolean',
-            'with_gps'       => 'boolean',
-            'payments_no'    => 'required|integer|in:1,2,4',
+            'is_price_net'          => 'boolean',
+            'with_gps'              => 'boolean',
+            'number_of_payments'    => 'required|integer|in:1,2,4',
         ];
     }
 }

@@ -1,5 +1,7 @@
 ## Vehis - Recruitment Task
 
+![Vehis App Demo](https://i.ibb.co/XX465xj/screenshotr-2023-3-9-T18-28-38.png)
+
 Local enviroment installation
 ```
 cp .env.example .env #replace with your enviroment variables
